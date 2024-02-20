@@ -65,7 +65,6 @@ public class WSService : IService
                 return true;
             else
                 return false;
-
         }
         catch (Exception)
         {

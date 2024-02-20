@@ -54,6 +54,7 @@ public partial class UtilisateurViewModel : ObservableObject
     public IRelayCommand BtnSearchUtilisateurCommand { get; }
     public IRelayCommand BtnModifyUtilisateurCommand { get; }
     public IRelayCommand BtnAddUtilisateurCommand { get; }
+    public IRelayCommand BtnClearUtilisateurCommand { get; }
     public UtilisateurViewModel()
     {
         var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
@@ -65,7 +66,13 @@ public partial class UtilisateurViewModel : ObservableObject
         BtnSearchUtilisateurCommand = new RelayCommand(RechercheUtilisateur);
         BtnModifyUtilisateurCommand = new RelayCommand(ModifierUtilisateur);
         BtnAddUtilisateurCommand = new RelayCommand(AjouterUtilisateur);
+        BtnClearUtilisateurCommand = new RelayCommand(ClearUtilisateur);
 
+    }
+
+    private void ClearUtilisateur()
+    {
+        UtilisateurSearch = null;
     }
 
     private async void AjouterUtilisateur()

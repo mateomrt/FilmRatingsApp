@@ -27,6 +27,14 @@ public partial class App : Application
         get;
     }
 
+    public static FrameworkElement MainRoot
+    {
+        get
+        {
+            return MainWindow.Content as FrameworkElement;
+        }
+    }
+
     public static T GetService<T>()
         where T : class
     {
